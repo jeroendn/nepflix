@@ -1,0 +1,25 @@
+.container {
+  margin: 1vw 3vw 1vw 3vw;
+  max-width: 100vw;
+  padding: 0;
+  white-space: nowrap;
+  width: 94vw;
+}
+
+.card {
+  border: 0;
+  display: inline-block;
+  margin: 0 0.3vw;
+  overflow-x: visible;
+  width: 18vw;
+}
+
+.card-body {
+  height: 10vw;
+  padding: 0;
+  width: 18vw;
+}
+
+.btn-logout:hover {
+	color: red !important;
+}

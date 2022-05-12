@@ -1,0 +1,50 @@
+body {
+  background-color: #111;
+  color: #fff;
+  margin: 0;
+  /* v code voor scrollbar v */
+  overflow-x: hidden;
+  width: 100vw;
+}
+
+/* scrollbar code */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+  box-shadow: inset 0 0 6px rgb(255, 0, 0, 1);
+}
+::-webkit-scrollbar-thumb {
+  background: #d00;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-button {
+  display: none;
+}
+
+/* header css */
+/*Navbar:*/
+.navbar {
+	background-color: #000000 !important;
+}
+
+.nav-item a {
+	color: white !important;
+}
+
+.nav-item form button {
+  color: white !important;
+  margin-top: 10px !important;
+}
+
+/* footer css */
+#footer {
+  background-color: #111;
+  /* margin is om te zorgen dat de footer beneden staad */
+  margin-top: 100px;
+}
+
+.card {
+  margin-top: 1vw;
+}
