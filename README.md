@@ -1,2 +1,2 @@
-# nepflix-v2
- Remasterd version of the earlier Nepflix schoolproject.
+# Nepflix v2
+ Remastered version of the earlier Nepflix school project.
