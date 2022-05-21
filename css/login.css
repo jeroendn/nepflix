@@ -1,0 +1,11 @@
+body {
+  background: url(../images/background/BackgroundLogin.jpg);
+}
+
+#nepflix-logo {
+  justify-content: center;
+}
+
+#nepflix-logo img {
+  filter: drop-shadow(5px 5px 5px #000);
+}

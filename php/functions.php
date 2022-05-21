@@ -26,6 +26,15 @@ function getUrl(): string
 }
 
 /**
+ * @return bool
+ */
+function loggedIn(): bool
+{
+  return isset($_SESSION['customer']);
+}
+
+
+/**
  * Debug a variable to the screen.
  * @param $variable
  * @return void

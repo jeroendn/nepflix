@@ -46,5 +46,5 @@ if (isset($_POST['login-submit'])) {
 }
 else {
   header('Location: ../../login?error=form-was-not-submitted');
-  exit();
+  exit;
 }

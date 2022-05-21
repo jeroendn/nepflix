@@ -7,6 +7,7 @@ require_once __DIR__ . '../../php/session.php';
 	<head>
     <title>NEPFLIX- Browse</title>
     <?php require_once __DIR__ . '/includes/head.php'; ?>
+    <link rel="stylesheet" type="text/css" href="../css/browse.css">
 	</head>
 
 	<body style="background-color: #111">
