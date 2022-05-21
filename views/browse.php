@@ -1,9 +1,5 @@
 <?php
 require_once __DIR__ . '../../php/session.php';
-
-//if (!isset($_SESSION['userId'])) {
-//	header("Location: ../login");
-//}
 ?>
 
 <!DOCTYPE html>

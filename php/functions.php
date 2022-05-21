@@ -1,0 +1,37 @@
+<?php
+/**
+ * Return the database connection or exits the script on failure.
+ * @return PDO
+ */
+function db(): PDO
+{
+  try {
+    $conn = new PDO('mysql:host=' . DB_SERVERNAME . ';dbname=' . DB_TABLE_NAME, DB_USERNAME, DB_PASSWORD);
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+  }
+  catch (PDOException $e) {
+    echo 'An error has occurred: ' . $e->getMessage();
+    exit;
+  }
+
+  return $conn;
+}
+
+/**
+ * @return string
+ */
+function getUrl(): string
+{
+  return "https://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+}
+
+/**
+ * Debug a variable to the screen.
+ * @param $variable
+ * @return void
+ */
+function dd($variable)
+{
+  var_dump($variable);
+  die;
+}

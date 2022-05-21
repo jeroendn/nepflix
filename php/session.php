@@ -2,6 +2,9 @@
 
 require_once __DIR__ . '../../.config.php';
 require_once __DIR__ . '/functions.php';
-require_once __DIR__ . '/dbconnection.php';
 
 session_start();
+
+if (!isset($_SESSION['customer']) && basename(getUrl()) !== 'login') {
+  header('Location: /login');
+}

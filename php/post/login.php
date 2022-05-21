@@ -3,57 +3,46 @@ require_once __DIR__ . '../../session.php';
 
 if (isset($_POST['login-submit'])) {
 
-	require 'dbconnection.inc.php';
+  $mailOrUsername = $_POST['mail-or-username'];
+  $password = $_POST['password'];
 
-	$emailusername = $_POST['emailusername'];
-	$password = $_POST['password'];
+  if (empty($mailOrUsername) || empty($password)) {
+    header('Location: ../../login?error=missing-required-fields');
+    exit;
+  }
 
-	if (empty($emailusername) || empty($password)) {
-		header("Location: ../login/index.php?error=emtyfieldslogin");
-		exit();
-	}
-	else {
-		try {
-			$sql = "SELECT * FROM users WHERE user_username=:username OR user_email=:email;";
-			$stmt = $conn->prepare($sql);
-			$stmt->bindParam(':username', $emailusername, PDO::PARAM_STR);
-			$stmt->bindParam(':email', $emailusername, PDO::PARAM_STR);
-			$stmt->execute();
-		}
-		catch (PDOException $e) {
-			header("Location: ../login/index.php?error=sqlerror");
-			exit();
-		}
+  try {
+    $sql = 'SELECT * FROM customer WHERE customer_mail_address=:mail OR user_name=:username;';
+    $stmt = db()->prepare($sql);
+    $stmt->bindParam(':mail', $mailOrUsername, PDO::PARAM_STR);
+    $stmt->bindParam(':username', $mailOrUsername, PDO::PARAM_STR);
+    $stmt->execute();
+  }
+  catch (PDOException $e) {
+    header('Location: ../../login?error=sql-error');
+    exit;
+  }
 
-		if ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-			$passwordCheck = password_verify($password, $row['user_password']);
-			if ($passwordCheck == false) {
-				header("Location: ../login/index.php?error=wrongpassword");
-				exit();	
-			}
-			else if ($passwordCheck == true) {
-				//Alles na het inloggen
-				session_start();
-				$_SESSION['userId'] = $row['user_id'];
-				$_SESSION['userUsername'] = $row['user_username'];
+  if ($customer = $stmt->fetch(PDO::FETCH_ASSOC)) {
+    $passwordVerified = password_verify($password, $customer['password']);
+    if (!$passwordVerified) {
+      header('Location: ../../login?error=wrong-password');
+      exit;
+    }
 
-				header("Location: ../login/index.php?login=success");
-				exit();						
-				
-			}
-			else {
-				header("Location: ../login/index.php?error=wrongpassword");
-				exit();						
-			}
-		}
-		else {
-			header("Location: ../login/index.php?error=nouserfound");
-			exit();				
-		}
-	}
+    unset($customer['user_id']['password']); // Do not store password in session
+    $_SESSION['customer'] = $customer['user_id'];
+
+    header('Location: ../../browse?message=login-success');
+    exit;
+  }
+  else {
+    header('Location: ../../login?error=user-not-found');
+    exit;
+  }
 
 }
 else {
-	header("Location: ../login/index.php");
-	exit();
+  header('Location: ../../login?error=form-was-not-submitted');
+  exit();
 }
