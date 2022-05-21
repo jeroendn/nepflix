@@ -31,7 +31,7 @@ require_once __DIR__ . '../../php/session.php';
 					<input class="btn btn-primary bg-danger font-weight-bold m-1" type="submit" name="login-submit" value="Login">
 				</form>
 			</div>
-			<!-- or block -->
+			<!-- separator block -->
 			<div class="card col-sm-1 container-fluid text-center text-md bg-danger">
 				<p class="card-text text-light font-weight-bold">Or</p>
 			</div>
@@ -47,7 +47,7 @@ require_once __DIR__ . '../../php/session.php';
 					<input type="text" name="mail" id="mail" placeholder="Mail"><br>
 					<!-- password -->
 					<label class="text-light m-1" for="password">Create a password:</label><br>
-					<input type="password" name="password" id="password" placeholder="Repeat password"><br>
+					<input type="password" name="password" id="password" placeholder="Password"><br>
 					<!-- password repeat -->
 					<label class="text-light m-1" for="password-repeat">Repeat your password:</label><br>
 					<input type="password" name="password-repeat" id="password-repeat" placeholder="Repeat password"><br>

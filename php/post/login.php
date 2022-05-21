@@ -1,5 +1,8 @@
 <?php
-require_once __DIR__ . '../../session.php';
+require_once __DIR__ . '../../../.config.php';
+require_once __DIR__ . '/../functions.php';
+
+session_start();
 
 if (isset($_POST['login-submit'])) {
 
@@ -23,23 +26,22 @@ if (isset($_POST['login-submit'])) {
     exit;
   }
 
-  if ($customer = $stmt->fetch(PDO::FETCH_ASSOC)) {
-    $passwordVerified = password_verify($password, $customer['password']);
-    if (!$passwordVerified) {
-      header('Location: ../../login?error=wrong-password');
-      exit;
-    }
-
-    unset($customer['user_id']['password']); // Do not store password in session
-    $_SESSION['customer'] = $customer['user_id'];
-
-    header('Location: ../../browse?message=login-success');
-    exit;
-  }
-  else {
+  if (!$customer = $stmt->fetch(PDO::FETCH_ASSOC)) {
     header('Location: ../../login?error=user-not-found');
     exit;
   }
+
+  $passwordVerified = password_verify($password, $customer['password']);
+  if (!$passwordVerified) {
+    header('Location: ../../login?error=wrong-password');
+    exit;
+  }
+
+  unset($customer['password']); // Do not store password in session
+  $_SESSION['customer'] = $customer;
+
+  header('Location: ../../browse?message=login-success');
+  exit;
 
 }
 else {
