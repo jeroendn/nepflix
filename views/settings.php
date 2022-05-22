@@ -1,9 +1,5 @@
 <?php
 require_once __DIR__ . '../../php/session.php';
-
-//if (!isset($_SESSION['userId'])) {
-//	header("Location: ../login");
-//}
 ?>
 
 <!DOCTYPE html>
@@ -18,55 +14,46 @@ require_once __DIR__ . '../../php/session.php';
 <?php require_once __DIR__ . '/includes/header.php'; ?>
 
 <main>
-  <?php
-  //			$sql = "SELECT * FROM users WHERE user_id =:user_id";
-  //			$stmt = $conn->prepare($sql);
-  //			$stmt->bindParam(':user_id', $_SESSION['userId']);
-  //			$stmt->execute();
-  //			$rowAccount = $stmt->fetchAll(PDO::FETCH_ASSOC);
+  <div class="container">
+    <div class="card">
+      <p class="bold">Change your account details</p>
+      <form action="../php/settings.inc.php" method="post">
 
-  echo '  <div class="card col-sm-6 container-fluid text-center text-md bg-dark" style="opacity: 0.95">
-							<p class="card-title text-light font-weight-bold">Change your account details</p>
-							<form class="text-center" action="../php/settings.inc.php" method="post">
+        <!-- current username -->
+        <label>Current username</label>
+        <input type="text" value="<?= $_SESSION['customer']['user_name'] ?? '' ?>" disabled>
 
-								<!-- current username -->
-								<label class="text-light m-1">current username</label><br>
-								<input type="text" value="' . $rowAccount[0]['user_username'] . '" disabled><br>
+        <!-- new username -->
+        <label for="username">New username</label>
+        <input type="text" name="username" id="username" value="<?= $_SESSION['customer']['user_name'] ?? '' ?>" placeholder="Username">
 
-								<!-- new username -->
-								<label class="text-light m-1" for="username">New username</label><br>
-								<input type="text" name="username" id="username" value="' . $rowAccount[0]['user_username'] . '" placeholder="Username"><br>
+        <!-- current mail -->
+        <label>Current Mail</label>
+        <input type="email" value="<?= $_SESSION['customer']['customer_mail_address'] ?? '' ?>" disabled>
 
-								<!-- current email -->
-								<label class="text-light m-1">Current E-mail</label><br>
-								<input type="text" value="' . $rowAccount[0]['user_email'] . '" disabled><br>
+        <!-- new mail -->
+        <label for="mail">New Mail</label>
+        <input type="email" name="mail" id="mail" value="<?= $_SESSION['customer']['customer_mail_address'] ?? '' ?>" placeholder="Mail">
 
-								<!-- new email -->
-								<label class="text-light m-1" for="mail">New E-mail</label><br>
-								<input type="text" name="mail" id="mail" value="' . $rowAccount[0]['user_email'] . '" placeholder="E-Mail"><br>
+        <!-- current password -->
+        <label for="current-password">Current password</label>
+        <input type="password" name="current-password" id="current-password" placeholder="Password" required>
 
-								<!-- current password -->
-								<label class="text-light m-1" for="password1">Current password</label><br>
-								<input type="password" name="password1" id="password1" placeholder="Password"><br>
+        <p class="bold">Change password<br><i>* Leave empty to keep current password</i></p>
+        <!-- new password -->
+        <label for="new-password">New password</label>
+        <input type="password" name="new-password" id="new-password" placeholder="Password">
 
-								<!-- change password button -->
-								<input id="btn-change-password" class="btn btn-primary bg-danger font-weight-bold m-1" type="button" name="btn-change-password" value="Change password"><br>
+        <!-- repeat new password -->
+        <label for="new-password-repeat">Repeat new password</label>
+        <input type="password" name="new-password-repeat" id="new-password-repeat" placeholder="Password">
 
-								<div class="changePassword">
-									<!-- new password -->
-									<label class="text-light m-1" for="password2">New password</label><br>
-									<input type="password" name="password2" id="password2" placeholder="Password"><br>
+        <!-- submit button -->
+        <input type="submit" name="settings-submit" value="Save changes">
+      </form>
+    </div>
+  </div>
 
-									<!-- repeat new password -->
-									<label class="text-light m-1" for="password3">Repeat new password</label><br>
-									<input type="password" name="password3" id="password3" placeholder="Password"><br>
-								</div>
-
-								<!-- submit button -->
-								<input class="btn btn-primary bg-danger font-weight-bold m-1" type="submit" name="settings-submit" value="Save changes">
-							</form>
-						</div>';
-  ?>
 </main>
 
 <?php require_once __DIR__ . '/includes/footer.php'; ?>

@@ -38,6 +38,15 @@ p {
   margin: 0 0 15px 0;
 }
 
+a {
+  color: var(--color-font-link);
+}
+
+a:hover {
+  text-decoration: none;
+  opacity: .95;
+}
+
 .bold {
   font-weight: bold;
   font-family: var(--font-family-bold);
@@ -110,7 +119,11 @@ input, textarea {
   font-family: var(--font-family-light);
 }
 
-input[type="text"], input[type="number"], input[type="password"] {
+input:disabled {
+  cursor: not-allowed;
+}
+
+input[type="text"], input[type="number"], input[type="password"], input[type="email"] {
   background-color: #fff;
   border-radius: var(--border-radius);
   border: 1px solid var(--color-accent-secondary);
