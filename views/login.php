@@ -23,43 +23,45 @@ if (loggedIn()) {
 </div>
 
 <main>
-  <!-- login -->
-  <div class="card col-sm-6 container-fluid text-center text-md bg-dark" style="opacity: 0.95">
-    <p class="card-title text-light font-weight-bold">Login to Netflix</p>
-    <form class="text-center" action="../php/post/login.php" method="post">
-      <!-- mail -->
-      <label class="text-light m-1" for="mail-or-username">Mail address or username:</label><br>
-      <input type="text" name="mail-or-username" id="mail-or-username" placeholder="Mail/Username"><br>
-      <!-- password -->
-      <label class="text-light m-1" for="password">Password:</label><br>
-      <input type="password" name="password" id="password" placeholder="Password"><br>
-      <!-- submit -->
-      <input class="btn btn-primary bg-danger font-weight-bold m-1" type="submit" name="login-submit" value="Login">
-    </form>
-  </div>
-  <!-- separator block -->
-  <div class="card col-sm-1 container-fluid text-center text-md bg-danger">
-    <p class="card-text text-light font-weight-bold">Or</p>
-  </div>
-  <!-- register -->
-  <div class="card col-sm-6 container-fluid text-center text-md bg-dark" style="opacity: 0.95">
-    <p class="card-title text-light font-weight-bold">Register for Netflix</p>
-    <form class="text-center" action="../php/signup.inc.php" method="post">
-      <!-- username -->
-      <label class="text-light m-1" for="username">Choose a username:</label><br>
-      <input type="text" name="username" id="username" placeholder="Username"><br>
-      <!-- mail -->
-      <label class="text-light m-1" for="mail">Fill in your mail adress:</label><br>
-      <input type="text" name="mail" id="mail" placeholder="Mail"><br>
-      <!-- password -->
-      <label class="text-light m-1" for="password">Create a password:</label><br>
-      <input type="password" name="password" id="password" placeholder="Password"><br>
-      <!-- password repeat -->
-      <label class="text-light m-1" for="password-repeat">Repeat your password:</label><br>
-      <input type="password" name="password-repeat" id="password-repeat" placeholder="Repeat password"><br>
-      <!-- submit -->
-      <input class="btn btn-primary bg-danger font-weight-bold m-1" type="submit" name="signup-submit" value="Register">
-    </form>
+  <div class="container">
+    <!-- login -->
+    <div class="card">
+      <p class="bold">Login to Nepflix</p>
+      <form action="../php/post/login.php" method="post">
+        <!-- mail -->
+        <label for="mail-or-username">Mail address or username</label>
+        <input type="text" name="mail-or-username" id="mail-or-username" placeholder="Mail/Username">
+        <!-- password -->
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password" placeholder="Password">
+        <!-- submit -->
+        <input type="submit" name="login-submit" value="Login">
+      </form>
+    </div>
+    <!-- separator block -->
+    <div class="card bold card-separator">
+      <p>Or</p>
+    </div>
+    <!-- register -->
+    <div class="card">
+      <p class="bold">Register for Nepflix</p>
+      <form action="../php/signup.inc.php" method="post">
+        <!-- username -->
+        <label for="username">Choose a username</label>
+        <input type="text" name="username" id="username" placeholder="Username">
+        <!-- mail -->
+        <label for="mail">Fill in your mail address</label>
+        <input type="text" name="mail" id="mail" placeholder="Mail">
+        <!-- password -->
+        <label for="password">Create a password</label>
+        <input type="password" name="password" id="password" placeholder="Password">
+        <!-- password repeat -->
+        <label for="password-repeat">Repeat password</label>
+        <input type="password" name="password-repeat" id="password-repeat" placeholder="Repeat password">
+        <!-- submit -->
+        <input type="submit" name="signup-submit" value="Register">
+      </form>
+    </div>
   </div>
 </main>
 

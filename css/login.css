@@ -1,5 +1,6 @@
 body {
   background: url(../images/background/BackgroundLogin.jpg);
+  background-size: cover;
 }
 
 #nepflix-logo {
@@ -8,4 +9,16 @@ body {
 
 #nepflix-logo img {
   filter: drop-shadow(5px 5px 5px #000);
+}
+
+.card-separator {
+  max-width: 90px;
+  padding: 0;
+  background-color: var(--color-accent-primary);
+  margin-right: 50vw;
+  margin-left: 50vw;
+}
+
+.card-separator p {
+  margin-bottom: 0;
 }
