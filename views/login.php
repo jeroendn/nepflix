@@ -19,14 +19,14 @@ if (loggedIn()) {
 <body>
 
 <div id="nepflix-logo" class="container">
-  <img class="img-fluid" src="../images/logo-navbar.png" alt="Nepflix logo">
+  <img class="img-fluid" src="../images/nepflix-logo.png" alt="Nepflix logo">
 </div>
 
 <main>
   <div class="container">
     <!-- login -->
     <div class="card">
-      <p class="bold">Login to Nepflix</p>
+      <p class="bold">Login to NEPFLIX</p>
       <form action="../php/post/login.php" method="post">
         <!-- mail -->
         <label for="mail-or-username">Mail address or username</label>
@@ -44,7 +44,7 @@ if (loggedIn()) {
     </div>
     <!-- register -->
     <div class="card">
-      <p class="bold">Register for Nepflix</p>
+      <p class="bold">Register for NEPFLIX</p>
       <form action="../php/signup.inc.php" method="post">
         <!-- username -->
         <label for="username">Choose a username</label>

@@ -1,10 +1,12 @@
 body {
-  background: url(../images/background/BackgroundLogin.jpg);
+  background: url(../images/wallpaper-movies.jpg);
   background-size: cover;
 }
 
 #nepflix-logo {
   justify-content: center;
+  margin-top: 40px;
+  margin-bottom: 40px;
 }
 
 #nepflix-logo img {
