@@ -10,7 +10,7 @@ require_once __DIR__ . '../../php/session.php';
   <link rel="stylesheet" type="text/css" href="../css/settings.css">
 </head>
 
-<body style="background-color: #111">
+<body>
 <?php require_once __DIR__ . '/includes/header.php'; ?>
 
 <main>

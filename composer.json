@@ -1,0 +1,15 @@
+{
+  "name": "jeroendn/nepflix",
+  "description": "Remastered version of the earlier Nepflix school project.",
+  "type": "project",
+  "license": "MIT",
+  "require": {
+    "php": "^8.0",
+    "ext-pdo": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "Nepflix\\Table\\": "php/Table"
+    }
+  }
+}

@@ -1,20 +1,27 @@
 <?php
+
+use Nepflix\Table\MovieTable;
+
 require_once __DIR__ . '../../php/session.php';
 ?>
 
 <!DOCTYPE html>
 <html lang="EN" dir="ltr">
-	<head>
-    <title>NEPFLIX- Browse</title>
-    <?php require_once __DIR__ . '/includes/head.php'; ?>
-    <link rel="stylesheet" type="text/css" href="../css/browse.css">
-	</head>
+<head>
+  <title>NEPFLIX- Browse</title>
+  <?php require_once __DIR__ . '/includes/head.php'; ?>
+  <link rel="stylesheet" type="text/css" href="../css/browse.css">
+</head>
 
-	<body style="background-color: #111">
-    <?php require_once __DIR__ . '/includes/header.php'; ?>
+<body>
+<?php require_once __DIR__ . '/includes/header.php'; ?>
 
-<!--		<div class="container">-->
-<!--			--><?php
+		<div class="container">
+<?php
+$movies = (new MovieTable())->get(332548);
+dd($movies);
+
+
 //				$sql = "SELECT * FROM category ORDER BY RAND()";
 //				$stmt = $conn->prepare($sql);
 //				$stmt->execute();
@@ -68,8 +75,8 @@ require_once __DIR__ . '../../php/session.php';
 //					echo'</div>';
 //				}
 //			?>
-<!--		</div>-->
+		</div>
 
-    <?php require_once __DIR__ . '/includes/footer.php'; ?>
-	</body>
+<?php require_once __DIR__ . '/includes/footer.php'; ?>
+</body>
 </html>
