@@ -32,7 +32,7 @@ final class MovieTable extends Table
 
   public function getByGenre(string $genreName): array
   {
-    $sql = 'SELECT * FROM movie INNER JOIN movie_genre ON movie.movie_id=movie_genre.movie_id WHERE movie_genre.genre_name=:genre_name ORDER BY movie.title';
+    $sql = 'SELECT * FROM movie INNER JOIN movie_genre ON movie.movie_id=movie_genre.movie_id WHERE movie_genre.genre_name=:genre_name ORDER BY RAND()';
     $stmt = $this->db->prepare($sql);
     $stmt->bindParam(':genre_name', $genreName, PDO::PARAM_STR);
     $stmt->execute();

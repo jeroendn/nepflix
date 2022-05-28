@@ -16,7 +16,7 @@ h2 {
   display: flex;
   width: calc(25% - 14px);
   min-width: calc(25% - 14px);
-  height: 120px;
+  height: 130px;
   background-size: cover;
   background-color: var(--color-accent-secondary);
   border-radius: var(--border-radius);
@@ -24,6 +24,7 @@ h2 {
   margin: 0 7px 7px 7px;
   transition: box-shadow 200ms ease;
   scroll-snap-align: start;
+  cursor: pointer;
 }
 
 .movie-card:hover {
@@ -33,6 +34,9 @@ h2 {
 .movie-card h3 {
   margin: 0 0 8px 0;
   text-shadow: 1px 1px 1px #000;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .movie-card p {
@@ -55,4 +59,8 @@ h2 {
 
 .movie-card:hover .movie-card-overlay {
   opacity: 1;
+}
+
+.movie-card-bottom {
+  margin-top: auto;
 }

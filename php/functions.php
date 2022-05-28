@@ -18,6 +18,15 @@ function db(): PDO
 }
 
 /**
+ * @param string $string
+ * @return string
+ */
+function h(string $string): string
+{
+  return htmlspecialchars($string);
+}
+
+/**
  * @return string
  */
 function getUrl(): string

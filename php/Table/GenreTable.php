@@ -24,7 +24,7 @@ final class GenreTable extends Table
    */
   public function getAll(): array
   {
-    $sql = 'SELECT * FROM genre ORDER BY genre_name';
+    $sql = 'SELECT * FROM genre ORDER BY RAND()';
     $stmt = $this->db->prepare($sql);
     $stmt->execute();
     return $stmt->fetchAll(PDO::FETCH_ASSOC) ?: [];

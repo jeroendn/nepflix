@@ -16,6 +16,7 @@ RewriteRule ^(.*)$ $1.php
 
 RewriteRule ^$ views/browse.php
 RewriteRule ^browse$ views/browse.php
+RewriteRule ^title/([^/]*)$ views/title.php?movie-id=$1 [L]
 RewriteRule ^login$ views/login.php
 RewriteRule ^logout$ views/logout.php
 RewriteRule ^settings$ views/settings.php
