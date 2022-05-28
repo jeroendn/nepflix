@@ -1,7 +1,7 @@
 <header>
   <nav class="navbar container">
     <div class="navbar-left">
-      <a href="/" class="navbar-logo"><img src="../images/nepflix-logo.png" width="110px" alt="Nepflix logo"></a>
+      <a href="/" class="navbar-logo"><img src="../img/nepflix-logo.png" width="110px" alt="Nepflix logo"></a>
       <button id="navbar-toggle" style="display:none;"><!-- TODO Show a button on mobile -->
         <span class="navbar-toggle-icon"></span>
       </button>
@@ -13,7 +13,7 @@
           <a href="/browse">Movies</a>
         </li>
         <li class="nav-item">
-          <a href="/browse">Series</a>
+          <a href="/browse">Films</a>
         </li>
       </ul>
     </div>

@@ -18,4 +18,24 @@ final class MovieTable extends Table
     $stmt->execute();
     return $stmt->fetch(PDO::FETCH_ASSOC) ?: [];
   }
+
+  /**
+   * @return array
+   */
+  public function getAll(): array
+  {
+    $sql = 'SELECT * FROM movie ORDER BY title';
+    $stmt = $this->db->prepare($sql);
+    $stmt->execute();
+    return $stmt->fetchAll(PDO::FETCH_ASSOC) ?: [];
+  }
+
+  public function getByGenre(string $genreName): array
+  {
+    $sql = 'SELECT * FROM movie INNER JOIN movie_genre ON movie.movie_id=movie_genre.movie_id WHERE movie_genre.genre_name=:genre_name ORDER BY movie.title';
+    $stmt = $this->db->prepare($sql);
+    $stmt->bindParam(':genre_name', $genreName, PDO::PARAM_STR);
+    $stmt->execute();
+    return $stmt->fetchAll(PDO::FETCH_ASSOC) ?: [];
+  }
 }

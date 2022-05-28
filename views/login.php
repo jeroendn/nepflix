@@ -19,7 +19,7 @@ if (loggedIn()) {
 <body>
 
 <div id="nepflix-logo" class="container">
-  <img class="img-fluid" src="../images/nepflix-logo.png" alt="Nepflix logo">
+  <img class="img-fluid" src="../img/nepflix-logo.png" alt="Nepflix logo">
 </div>
 
 <main>
