@@ -7,14 +7,14 @@ use PDO;
 final class GenreTable extends Table
 {
   /**
-   * @param int $genreName
+   * @param string $genreName
    * @return array
    */
-  public function get(int $genreName): array
+  public function get(string $genreName): array
   {
     $sql = 'SELECT * FROM genre WHERE genre_name=:genre_name';
     $stmt = $this->db->prepare($sql);
-    $stmt->bindParam(':genre_name', $movieId, PDO::PARAM_STR);
+    $stmt->bindParam(':genre_name', $genreName, PDO::PARAM_STR);
     $stmt->execute();
     return $stmt->fetch(PDO::FETCH_ASSOC) ?: [];
   }

@@ -4,7 +4,7 @@ use Nepflix\Table\MovieTable;
 
 require_once __DIR__ . '../../php/session.php';
 
-$movieId = $_GET['movie-id'] ?? null;
+$movieId = h($_GET['movie-id']) ?? null;
 $movie = $movieId ? (new MovieTable())->get($movieId) : null;
 ?>
 
