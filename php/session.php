@@ -6,5 +6,5 @@ require_once __DIR__ . '../../.config.php';
 require_once __DIR__ . '/functions.php';
 
 if (!loggedIn() && basename(getUrl()) !== 'login') {
-  header('Location: /login');
+  header('Location: /p/login/');
 }

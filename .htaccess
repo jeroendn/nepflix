@@ -17,7 +17,7 @@ RewriteRule ^(.*)$ $1.php
 RewriteRule ^p/(.*)/([^/]*)$ app.php?page=$1&param=$2 [L]
 
 #Redirect root directory
-RewriteRule ^/$ /p/browse/
+RewriteRule ^$ /p/browse/
 
 # Ensure https
 RewriteCond %{HTTP_HOST} !^localhost$ [NC]

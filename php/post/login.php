@@ -10,7 +10,7 @@ if (isset($_POST['login-submit'])) {
   $password = $_POST['password'];
 
   if (empty($mailOrUsername) || empty($password)) {
-    header('Location: ../../login?error=missing-required-fields');
+    header('Location: /p/login/?error=missing-required-fields');
     exit;
   }
 
@@ -22,29 +22,29 @@ if (isset($_POST['login-submit'])) {
     $stmt->execute();
   }
   catch (PDOException $e) {
-    header('Location: ../../login?error=sql-error');
+    header('Location: /p/login/?error=sql-error');
     exit;
   }
 
   if (!$customer = $stmt->fetch(PDO::FETCH_ASSOC)) {
-    header('Location: ../../login?error=user-not-found');
+    header('Location: /p/login/?error=user-not-found');
     exit;
   }
 
   $passwordVerified = password_verify($password, $customer['password']);
   if (!$passwordVerified) {
-    header('Location: ../../login?error=wrong-password');
+    header('Location: /p/login/?error=wrong-password');
     exit;
   }
 
   unset($customer['password']); // Do not store password in session
   $_SESSION['customer'] = $customer;
 
-  header('Location: ../../browse?message=login-success');
+  header('Location: /p/browse/?message=login-success');
   exit;
 
 }
 else {
-  header('Location: ../../login?error=form-was-not-submitted');
+  header('Location: /p/login/?error=form-was-not-submitted');
   exit;
 }

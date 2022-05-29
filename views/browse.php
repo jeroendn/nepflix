@@ -1,21 +1,8 @@
 <?php
-
 use Nepflix\Table\GenreTable;
 use Nepflix\Table\MovieTable;
 
-require_once __DIR__ . '../../php/session.php';
 ?>
-
-<!DOCTYPE html>
-<html lang="EN" dir="ltr">
-<head>
-  <title>NEPFLIX- Browse</title>
-  <?php require_once __DIR__ . '/includes/head.php'; ?>
-  <link rel="stylesheet" type="text/css" href="../css/browse.css">
-</head>
-
-<body>
-<?php require_once __DIR__ . '/includes/header.php'; ?>
 
 <div class="container">
   <?php $genres = (new GenreTable())->getAll(); ?>
@@ -44,7 +31,3 @@ require_once __DIR__ . '../../php/session.php';
     <?php endif; ?>
   <?php endforeach; ?>
 </div>
-
-<?php require_once __DIR__ . '/includes/footer.php'; ?>
-</body>
-</html>
