@@ -10,6 +10,7 @@ if (loggedIn()) {
 </div>
 
 <div class="container">
+
   <!-- login -->
   <div class="card">
     <p class="bold">Login to NEPFLIX</p>
@@ -24,14 +25,16 @@ if (loggedIn()) {
       <input type="submit" name="login-submit" value="Login">
     </form>
   </div>
+
   <!-- separator block -->
   <div class="card bold card-separator">
     <p>Or</p>
   </div>
+
   <!-- register -->
   <div class="card">
-    <p class="bold">Register for NEPFLIX</p>
-    <form action="../php/signup.inc.php" method="post">
+    <p class="bold">Sign up for NEPFLIX</p>
+    <form action="/php/post/signup.php" method="post">
       <!-- username -->
       <label for="username">Choose a username</label>
       <input type="text" name="username" id="username" placeholder="Username" required>
@@ -45,7 +48,8 @@ if (loggedIn()) {
       <label for="password-repeat">Repeat password</label>
       <input type="password" name="password-repeat" id="password-repeat" placeholder="Repeat password" required>
       <!-- submit -->
-      <input type="submit" name="signup-submit" value="Register">
+      <input type="submit" name="signup-submit" value="Sign up">
     </form>
   </div>
+
 </div>

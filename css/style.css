@@ -126,7 +126,7 @@ li.nav-item:not(:last-child) a {
 
 #footer {
   background-color: var(--color-accent-secondary);
-  margin-top: 100px;
+  margin-top: 50px;
   display: flex;
   flex-flow: row wrap;
   justify-content: center;

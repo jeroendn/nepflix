@@ -7,8 +7,6 @@
 use Nepflix\Table\GenreTable;
 use Nepflix\Table\MovieTable;
 
-require_once __DIR__ . '../../php/session.php';
-
 $genre = $param ? (new GenreTable())->get($param) : null;
 ?>
 

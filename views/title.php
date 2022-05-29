@@ -6,8 +6,6 @@
 
 use Nepflix\Table\MovieTable;
 
-require_once __DIR__ . '../../php/session.php';
-
 $movie = $param ? (new MovieTable())->get($param) : null;
 ?>
 

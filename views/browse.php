@@ -11,7 +11,7 @@ use Nepflix\Table\MovieTable;
     <?php $movies = (new MovieTable())->getByGenre($genre['genre_name'], 15); ?>
     <?php if (!empty($movies)): ?>
 
-      <h2><a href="/genre/<?= $genre['genre_name'] ?>"><?= $genre['genre_name'] ?>&nbsp;<i class="fas fa-chevron-right"></i></a></h2>
+      <h2><a href="/p/genre/<?= $genre['genre_name'] ?>"><?= $genre['genre_name'] ?>&nbsp;<i class="fas fa-chevron-right"></i></a></h2>
       <div class="genre-row scrollable">
         <?php foreach ($movies as $movie): ?>
           <div class="movie-card" style="background-image: url(/img/thumb/<?= (!empty($movie['cover_image']) ? $movie['cover_image'] : 'no-video.jpg') ?>);">
