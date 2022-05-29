@@ -30,9 +30,14 @@ final class MovieTable extends Table
     return $stmt->fetchAll(PDO::FETCH_ASSOC) ?: [];
   }
 
-  public function getByGenre(string $genreName): array
+  /**
+   * @param string $genreName
+   * @param int|null $limit
+   * @return array
+   */
+  public function getByGenre(string $genreName, ?int $limit = null): array
   {
-    $sql = 'SELECT * FROM movie INNER JOIN movie_genre ON movie.movie_id=movie_genre.movie_id WHERE movie_genre.genre_name=:genre_name ORDER BY RAND()';
+    $sql = 'SELECT * FROM movie INNER JOIN movie_genre ON movie.movie_id=movie_genre.movie_id WHERE movie_genre.genre_name=:genre_name ORDER BY RAND()' . ($limit ? " LIMIT $limit" : '');
     $stmt = $this->db->prepare($sql);
     $stmt->bindParam(':genre_name', $genreName, PDO::PARAM_STR);
     $stmt->execute();

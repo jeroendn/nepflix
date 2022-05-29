@@ -14,13 +14,10 @@ RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME}\.php -f
 RewriteRule ^(.*)$ $1.php
 
-RewriteRule ^$ views/browse.php
-RewriteRule ^browse$ views/browse.php
-RewriteRule ^genre/([^/]*)$ views/genre.php?name=$1 [L]
-RewriteRule ^title/([^/]*)$ views/title.php?movie-id=$1 [L]
-RewriteRule ^login$ views/login.php
-RewriteRule ^logout$ views/logout.php
-RewriteRule ^settings$ views/settings.php
+RewriteRule ^p/(.*)/([^/]*)$ app.php?page=$1&param=$2 [L]
+
+#Redirect root directory
+RewriteRule ^/$ /p/browse/
 
 # Ensure https
 RewriteCond %{HTTP_HOST} !^localhost$ [NC]

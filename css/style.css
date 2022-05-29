@@ -61,13 +61,19 @@ a:hover {
   margin: 0 auto;
   flex-flow: row wrap;
   justify-content: center;
-  width: 80%; /* TODO make responsive */
+  width: 80%;
+}
+
+@media only screen and (max-width: 425px) {
+  .container {
+    width: 90%;
+  }
 }
 
 .container-full {
   display: flex;
   margin: 0 auto;
-  width: 100%;
+  width: 100vw;
 }
 
 header {
@@ -104,7 +110,7 @@ li.nav-item:not(:last-child) a {
 
 @media only screen and (max-width: 768px) {
   .navbar-logo {
-    display: none;
+    /*display: none;*/
   }
 }
 
@@ -126,19 +132,21 @@ li.nav-item:not(:last-child) a {
 }
 
 #footer > p {
-  flex: 0 0 100%;
+  width: 100%;
   text-align: center;
+  margin-right: 10px;
+  margin-left: 10px;
 }
 
 .card {
   margin-bottom: 1vh;
   padding: 10px;
-  max-width: 500px;
+  max-width: 400px;
   border-radius: var(--border-radius);
   background-color: var(--color-bg-card);
   opacity: .95;
   text-align: center;
-  flex: 0 0 50%;
+  flex: 0 0 100%;
 }
 
 form {

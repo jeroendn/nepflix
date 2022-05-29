@@ -1,24 +1,18 @@
 <?php
+/**
+ * @var string $page
+ * @var string $param
+ */
 
 use Nepflix\Table\GenreTable;
 use Nepflix\Table\MovieTable;
 
 require_once __DIR__ . '../../php/session.php';
 
-$genreName = h($_GET['name']) ?? null;
-$genre = $genreName ? (new GenreTable())->get($genreName) : null;
+$genre = $param ? (new GenreTable())->get($param) : null;
 ?>
 
-<!DOCTYPE html>
-<html lang="EN" dir="ltr">
-<head>
-  <title>NEPFLIX- <?= $movie['genre_name'] ?? '404' ?></title>
-  <?php require_once __DIR__ . '/includes/head.php'; ?>
-  <link rel="stylesheet" type="text/css" href="../css/browse.css">
-</head>
-
-<body>
-<?php require_once __DIR__ . '/includes/header.php'; ?>
+<link rel="stylesheet" type="text/css" href="/css/browse.css">
 
 <div class="container">
   <?php if (!empty($genre)): ?>
@@ -30,8 +24,8 @@ $genre = $genreName ? (new GenreTable())->get($genreName) : null;
       <h2><?= count($movies) ?> Results</h2>
       <div class="genre-row">
         <?php foreach ($movies as $movie): ?>
-          <div class="movie-card" style="background-image: url(../img/thumb/<?= (!empty($movie['cover_image']) ? $movie['cover_image'] : 'no-video.jpg') ?>);">
-            <a href="/title/<?= $movie['movie_id'] ?>">
+          <div class="movie-card" style="background-image: url(/img/thumb/<?= (!empty($movie['cover_image']) ? $movie['cover_image'] : 'no-video.jpg') ?>);">
+            <a href="/p/title/<?= $movie['movie_id'] ?>">
               <div class="movie-card-overlay">
                 <h3><?= $movie['title'] ?></h3>
                 <p><?= (strlen($movie['description']) > 50 ? substr($movie['description'], 0, 50) . '...' : $movie['description']) ?></p>
@@ -52,7 +46,3 @@ $genre = $genreName ? (new GenreTable())->get($genreName) : null;
     <h1>Oops! This genre doesn't exist.</h1>
   <?php endif; ?>
 </div>
-
-<?php require_once __DIR__ . '/includes/footer.php'; ?>
-</body>
-</html>

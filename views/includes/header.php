@@ -1,19 +1,19 @@
 <header>
   <nav class="navbar container">
     <div class="navbar-left">
-      <a href="/" class="navbar-logo"><img src="../img/nepflix-logo.png" width="110px" alt="Nepflix logo"></a>
+      <a href="/p/browse/" class="navbar-logo"><img src="/img/nepflix-logo.png" width="110px" alt="Nepflix logo"></a>
       <button id="navbar-toggle" style="display:none;"><!-- TODO Show a button on mobile -->
         <span class="navbar-toggle-icon"></span>
       </button>
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a href="/browse">Home</a>
+          <a href="/p/browse/">Home</a>
         </li>
         <li class="nav-item">
-          <a href="/browse">Movies</a>
+          <a href="/p/browse/">Movies</a>
         </li>
         <li class="nav-item">
-          <a href="/browse">Films</a>
+          <a href="/p/browse/">Films</a>
         </li>
       </ul>
     </div>
@@ -22,10 +22,10 @@
       <div id="nav-search"><input type="text" name="nav_search" id="nav-search" placeholder="Search..."></div>
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a href="/settings"><i class="fas fa-cog"></i></a>
+          <a href="/p/settings/"><i class="fas fa-cog"></i></a>
         </li>
         <li class="nav-item">
-          <a href="/logout" class="btn-logout">Logout</a>
+          <a href="/p/logout/" class="btn-logout">Logout</a>
         </li>
       </ul>
     </div>

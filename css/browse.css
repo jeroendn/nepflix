@@ -42,7 +42,7 @@ h2 a:hover i {
   overflow: hidden;
   margin: 7px;
   transition: box-shadow 200ms ease;
-  scroll-snap-align: start;
+  scroll-snap-align: center;
   cursor: pointer;
 }
 
