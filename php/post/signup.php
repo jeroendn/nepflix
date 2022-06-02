@@ -6,21 +6,21 @@ if (!isset($_POST['signup-submit'])) {
   exit;
 }
 
-$firstname = 'huts';
-$lastname = 'huts';
-$username = $_POST['username'];
-$mail = $_POST['mail'];
-$password = $_POST['password'];
-$passwordRepeat = $_POST['password-repeat'];
-$paymentMethod = 'Mastercard';
-$paymentCardNumber = 'huts';
-$contractType = 'Pro';
-$subscriptionStart = '2022-01-01';
-$countryName = 'Netherlands';
-$gender = 'M';
-$birthDate = '2022-01-01';
+$firstname = h($_POST['firstname']);
+$lastname = h($_POST['lastname']);
+$username = h($_POST['username']);
+$mail = h($_POST['mail']);
+$password = h($_POST['password']);
+$passwordRepeat = h($_POST['password-repeat']);
+$paymentMethod = h($_POST['payment-method']);
+$paymentCardNumber = h($_POST['payment-card-number']);
+$contractType = h($_POST['contract-type']);
+$subscriptionStart = (new DateTime('now'))->format('Y-m-d');
+$countryName = h($_POST['country-name']);
+$gender = h($_POST['gender']);
+$birthdate = h($_POST['birthdate']);
 
-if (empty($username) || empty($mail) || empty($password) || empty($passwordRepeat)) { // TODO
+if (empty($username) || empty($mail) || empty($password) || empty($passwordRepeat) || empty($firstname) || empty($lastname) || empty($paymentMethod) || empty($paymentCardNumber) || empty($contractType) || empty($countryName)) {
   header('Location: /p/entry/?error=missing-required-fields');
   exit;
 }
@@ -73,7 +73,7 @@ try {
   $stmt->bindParam(':subscription_start', $subscriptionStart, PDO::PARAM_STR);
   $stmt->bindParam(':country_name', $countryName, PDO::PARAM_STR);
   $stmt->bindParam(':gender', $gender, PDO::PARAM_STR);
-  $stmt->bindParam(':birth_date', $birthDate, PDO::PARAM_STR);
+  $stmt->bindParam(':birth_date', $birthdate, PDO::PARAM_STR);
   $stmt->execute();
 }
 catch (PDOException $e) {

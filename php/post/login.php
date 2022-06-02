@@ -1,19 +1,18 @@
 <?php
 require_once __DIR__ . './../session.php';
 
-$mailOrUsername = $_POST['mail-or-username'] ?? null;
-$password = $_POST['password'] ?? null;
+$mail = ($_POST['mail']) ?? null;
+$password = h($_POST['password']) ?? null;
 
-if (empty($mailOrUsername) || empty($password)) {
+if (empty($mail) || empty($password)) {
   header('Location: /p/entry/?error=missing-required-fields');
   exit;
 }
 
 try {
-  $sql = 'SELECT * FROM customer WHERE customer_mail_address=:mail OR user_name=:username;';
+  $sql = 'SELECT * FROM customer WHERE customer_mail_address=:mail';
   $stmt = db()->prepare($sql);
-  $stmt->bindParam(':mail', $mailOrUsername, PDO::PARAM_STR);
-  $stmt->bindParam(':username', $mailOrUsername, PDO::PARAM_STR);
+  $stmt->bindParam(':mail', $mail, PDO::PARAM_STR);
   $stmt->execute();
 }
 catch (PDOException $e) {

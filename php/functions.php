@@ -6,7 +6,7 @@
 function db(): PDO
 {
   try {
-    $conn = new PDO('mysql:host=' . DB_SERVERNAME . ';dbname=' . DB_TABLE_NAME, DB_USERNAME, DB_PASSWORD);
+    $conn = new PDO('mysql:host=' . DB_SERVERNAME . ';charset=utf8mb4;dbname=' . DB_TABLE_NAME, DB_USERNAME, DB_PASSWORD);
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
   }
   catch (PDOException $e) {

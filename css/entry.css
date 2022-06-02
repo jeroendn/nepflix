@@ -1,6 +1,7 @@
 body {
   background: url(../img/wallpaper-movies.jpg);
   background-size: cover;
+  background-position: center;
 }
 
 #nepflix-logo {
