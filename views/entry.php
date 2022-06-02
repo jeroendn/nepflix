@@ -76,7 +76,7 @@ $payments = (new PaymentTable())->getAll();
       <label for="contract-type">Contract *</label>
       <select name="contract-type" id="contract-type">
         <?php foreach ($contracts as $contract): ?>
-          <option value="<?= $contract['contract_type'] ?>"><?= $contract['contract_type'] ?></option>
+          <option value="<?= $contract['contract_type'] ?>"><?= $contract['contract_type'] ?> - &euro;<?= $contract['price_per_month'] ?></option>
         <?php endforeach; ?>
       </select>
       <!-- country -->
@@ -99,7 +99,7 @@ $payments = (new PaymentTable())->getAll();
       <input type="date" name="birthdate" id="birthdate" value="2000-01-01">
       <!-- submit -->
       <input type="submit" name="signup-submit" value="Sign up">
-      <span>* Required fields</span>
+      <p style="font-size: 12px;"><i>* Required fields</i></p>
     </form>
   </div>
 

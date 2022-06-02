@@ -155,29 +155,32 @@ form {
   text-align: center;
 }
 
+form i {
+  font-size: 10px;
+  font-family: var(--font-family-light);
+  font-weight: 100;
+}
+
 label {
   display: block;
   margin-bottom: 5px;
   font-family: var(--font-family-light);
 }
 
-input, textarea {
-  margin-bottom: 10px;
-  font-family: var(--font-family-light);
-}
-
-input:disabled {
-  cursor: not-allowed;
-}
-
-input[type="text"], input[type="number"], input[type="password"], input[type="email"] {
+input,
+select,
+textarea {
   background-color: #fff;
   border-radius: var(--border-radius);
   border: 1px solid var(--color-accent-secondary);
   padding: 5px 3px;
+  margin-bottom: 10px;
+  font-family: var(--font-family-light);
 }
 
-input[type="text"]:focus, input[type="number"]:focus, input[type="password"]:focus {
+input:focus,
+select:focus,
+textarea:focus {
   outline: 1px solid var(--color-accent-primary);
 }
 
@@ -192,4 +195,8 @@ input[type="button"], input[type="submit"] {
   display: block;
   margin-right: auto;
   margin-left: auto;
+}
+
+input:disabled {
+  cursor: not-allowed;
 }
