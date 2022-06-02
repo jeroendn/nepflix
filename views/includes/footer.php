@@ -1,4 +1,4 @@
-<footer id="footer" class="container-full">
+<footer class="container-full">
   <?php if (loggedIn()): ?>
     <p><a href='/p/browse/'>Browse</a></p>
     <p><a href='/p/settings/'>Settings</a></p>

@@ -124,16 +124,15 @@ li.nav-item:not(:last-child) a {
   color: red;
 }
 
-#footer {
+footer {
   background-color: var(--color-accent-secondary);
-  margin-top: 50px;
-  display: flex;
+  margin-top: 50px !important;
   flex-flow: row wrap;
   justify-content: center;
   padding-top: 15px;
 }
 
-#footer > p {
+footer > p {
   width: 100%;
   text-align: center;
   margin-right: 10px;
