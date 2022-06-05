@@ -21,3 +21,38 @@
 .play-btn i {
   font-size: 60px;
 }
+
+.title-info-bar {
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.title-info-bar p {
+  margin-right: 20px;
+}
+
+.title-info-bar p span {
+  font-size: .8em;
+}
+
+.title-description {
+  width: 100%;
+}
+
+.title-cast {
+  text-align: center;
+}
+
+.title-cast h2 {
+  margin-bottom: 15px;
+}
+
+.title-cast ul {
+  padding: 0;
+  list-style-type: none;
+}
+
+.title-cast li {
+  margin-bottom: 10px;
+}
