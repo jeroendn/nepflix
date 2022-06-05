@@ -13,7 +13,7 @@ $directors = $movie ? (new MovieDirectorTable())->getForMovie($movie['movie_id']
 $casts = $movie ? (new MovieCastTable())->getForMovie($movie['movie_id']) : null;
 ?>
 
-<div class="container-full title-cover" style="background-image: linear-gradient(180deg, transparent 30%, var(--color-bg) 95%), url(/img/thumb/<?= $movie['cover_image'] ?>)">
+<div class="container-full title-cover" style="background-image: linear-gradient(180deg, transparent 30%, var(--color-bg) 95%), url(/img/thumb/<?= $movie['cover_image'] ?? 'no-video.jpg' ?>)">
 </div>
 
 <div class="container">
@@ -44,7 +44,7 @@ $casts = $movie ? (new MovieCastTable())->getForMovie($movie['movie_id']) : null
       <?php if (!empty($casts)): ?>
         <ul>
           <?php foreach ($casts as $cast): ?>
-            <li><?= $cast['firstname'] . ' ' . $cast['lastname'] ?></li>
+            <li><?= $cast['firstname'] . ' ' . $cast['lastname'] . ': ' . str_replace(['[', ']'], '', $cast['role']) ?></li>
           <?php endforeach; ?>
         </ul>
       <?php else: ?>
