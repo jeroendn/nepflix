@@ -8,6 +8,7 @@
   <?php endif; ?>
   <p><a href='/p/browse/'>About</a></p>
   <p><a href='/p/browse/'>Privacy policy</a></p>
+  <img src="/img/nepflix-logo-white.png" alt="Nepflix logo" style="width: 130px; margin-bottom: 15px;">
   <p>NEPFLIX© All rights reserved</p>
-  <p>Disclaimer: This website is part of a school project and is not meant for actual use.</p>
+  <p style="font-size: .75em;">Disclaimer: This website is part of a school project and is not meant for actual use.</p>
 </footer>

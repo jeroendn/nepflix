@@ -1,4 +1,4 @@
-#DON'T SHOW DIRECTORY LISTINGS
+# DON'T SHOW DIRECTORY LISTINGS
 Options -Indexes
 
 DirectoryIndex index.php
@@ -14,10 +14,11 @@ RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME}\.php -f
 RewriteRule ^(.*)$ $1.php
 
+# Send all pages to app.php file
 RewriteRule ^p/(.*)/([^/]*)$ app.php?page=$1&param=$2 [L]
 
-#Redirect root directory
-RewriteRule ^$ /p/browse/
+# Redirect root directory
+RedirectMatch ^/$ /p/browse/
 
 # Ensure https
 RewriteCond %{HTTP_HOST} !^localhost$ [NC]

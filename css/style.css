@@ -106,8 +106,10 @@ li.nav-item a:hover {
   color: var(--color-accent-primary)
 }
 
-li.nav-item:not(:last-child) a {
+li.nav-item:not(:last-child) a,
+li.nav-item:not(:last-child) p {
   margin-right: 15px;
+  margin-bottom: 0;
 }
 
 @media only screen and (max-width: 768px) {
