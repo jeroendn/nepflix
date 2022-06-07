@@ -1,7 +1,7 @@
 <?php
 require_once __DIR__ . './../session.php';
 
-$mail = ($_POST['mail']) ?? null;
+$mail = h($_POST['mail']) ?? null;
 $password = h($_POST['password']) ?? null;
 
 if (empty($mail) || empty($password)) {

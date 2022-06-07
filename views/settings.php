@@ -1,7 +1,7 @@
 <div class="container">
   <div class="card">
     <p class="bold">Change your account details</p>
-    <form action="../php/settings.inc.php" method="post">
+    <form action="/php/post/settings.php" method="post">
 
       <!-- current username -->
       <label>Current username</label>
