@@ -1,6 +1,6 @@
 {
   "name": "jeroendn/nepflix",
-  "description": "Remastered version of the earlier Nepflix school project.",
+  "description": "Nepflix a simple website written in only PHP, HTML and CSS mimicking popular streaming services.",
   "type": "project",
   "license": "MIT",
   "require": {

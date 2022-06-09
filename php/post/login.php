@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . './../session.php';
+require_once __DIR__ . './../includes/session.php';
 
 $mail = h($_POST['mail']) ?? null;
 $password = h($_POST['password']) ?? null;
