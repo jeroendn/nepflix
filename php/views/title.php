@@ -4,11 +4,13 @@
  * @var string $param
  */
 
+use Nepflix\Table\GenreTable;
 use Nepflix\Table\MovieCastTable;
 use Nepflix\Table\MovieDirectorTable;
 use Nepflix\Table\MovieTable;
 
 $movie = $param ? (new MovieTable())->get($param) : null;
+$genres = $movie ? (new GenreTable())->getForMovie($movie['movie_id']) : null;
 $directors = $movie ? (new MovieDirectorTable())->getForMovie($movie['movie_id']) : null;
 $casts = $movie ? (new MovieCastTable())->getForMovie($movie['movie_id']) : null;
 ?>
@@ -24,6 +26,17 @@ $casts = $movie ? (new MovieCastTable())->getForMovie($movie['movie_id']) : null
     <div class="title-info-bar">
       <p><span>Year:</span> <?= $movie['publication_year'] ?></p>
       <p><span>Duration:</span> <?= $movie['duration'] ?>min</p>
+      <p><span>Genre<?= (count($genres) > 1 ? 's' : '') ?>:</span>&nbsp;
+        <?php if (!empty($genres)) {
+          end($genres);
+          $lastKey = key($genres);
+          foreach ($genres as $key => $genre) {
+            echo $genre['genre_name'] . ($key === $lastKey ? '' : ', ');
+          }
+        }
+        else {
+          echo '-';
+        } ?></p>
       <p><span>Director<?= (count($directors) > 1 ? 's' : '') ?>:</span>&nbsp;
         <?php if (!empty($directors)) {
           end($directors);

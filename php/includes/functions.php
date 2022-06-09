@@ -53,3 +53,31 @@ function dd($variable)
   var_dump($variable);
   die;
 }
+
+/**
+ * @param array $movie
+ * @return string
+ */
+function getMovieTile(array $movie): string
+{
+  $id = $movie['movie_id'];
+  $title = $movie['title'];
+  $img = (!empty($movie['cover_image']) ? $movie['cover_image'] : 'no-video.jpg');
+  $description = (strlen($movie['description']) > 50 ? substr($movie['description'], 0, 50) . '...' : $movie['description']);
+  $year = $movie['publication_year'];
+  $duration = $movie['duration'];
+
+  return <<<HTML
+        <div class="movie-card" style="background-image: url(/img/thumb/$img);">
+          <a href="/p/title/$id">
+            <div class="movie-card-overlay">
+              <h3>$title</h3>
+              <p>$description</p>
+              <div class="movie-card-bottom">
+                <p><span>Year: $year</span>&nbsp-&nbsp<span>Min: $duration</span></p>
+              </div>
+            </div>
+          </a>
+        </div>
+  HTML;
+}

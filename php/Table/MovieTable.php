@@ -43,4 +43,26 @@ final class MovieTable extends Table
     $stmt->execute();
     return $stmt->fetchAll(PDO::FETCH_ASSOC) ?: [];
   }
+
+  /**
+   * @param string $searchWord
+   * @param string|null $genreName
+   * @return array
+   */
+  public function getBySearch(string $searchWord, ?string $genreName = null): array
+  {
+    if ($genreName === null) {
+      $sql = 'SELECT * FROM movie INNER JOIN movie_genre ON movie.movie_id=movie_genre.movie_id WHERE movie.title LIKE "%":search_word"%" ORDER BY movie.title';
+      $stmt = $this->db->prepare($sql);
+    }
+    else {
+      $sql = 'SELECT * FROM movie INNER JOIN movie_genre ON movie.movie_id=movie_genre.movie_id WHERE movie.title LIKE "%":search_word"%" AND movie_genre.genre_name=:genre_name ORDER BY movie.title';
+      $stmt = $this->db->prepare($sql);
+      $stmt->bindParam(':genre_name', $genreName, PDO::PARAM_STR);
+    }
+
+    $stmt->bindParam(':search_word', $searchWord, PDO::PARAM_STR);
+    $stmt->execute();
+    return $stmt->fetchAll(PDO::FETCH_ASSOC) ?: [];
+  }
 }

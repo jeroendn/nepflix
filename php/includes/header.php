@@ -1,9 +1,15 @@
+<?php
+
+use Nepflix\Table\GenreTable;
+
+?>
+
 <header>
   <nav class="navbar container">
 
     <div class="navbar-left">
       <a href="/p/browse/" class="navbar-logo"><img src="/img/nepflix-logo.png" width="110px" alt="Nepflix logo"></a>
-      <button id="navbar-toggle" style="display:none;"><!-- TODO Show a button on mobile -->
+      <button id="navbar-toggle" style="display:none;">
         <span class="navbar-toggle-icon"></span>
       </button>
       <ul class="navbar-nav">
@@ -20,7 +26,14 @@
     </div>
 
     <div class="navbar-right">
-      <div id="nav-search"><input type="text" name="nav_search" id="nav-search" placeholder="Search..."></div>
+      <div id="nav-search">
+        <form action="/p/search/" method="post">
+          <input type="text" name="search-word" id="search-word" placeholder="Search...">
+          <?php if (!empty($param) && !empty((new GenreTable())->get($param))): ?>
+            <input type="hidden" name="search-genre" id="search-genre" value="<?= $param ?>">
+          <?php endif; ?>
+        </form>
+      </div>
       <ul class="navbar-nav">
         <?php if (loggedIn()): ?>
           <li class="nav-item">
