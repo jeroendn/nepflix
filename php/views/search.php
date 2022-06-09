@@ -32,7 +32,7 @@ $movies = (new MovieTable)->getBySearch($searchWord, $searchGenre);
     </div>
 
   <?php else: ?>
-    <p style="width: 100%; text-align: center;">Your search didn't get any results.</p>
+    <p class="text-center">Your search didn't get any results.</p>
   <?php endif; ?>
 
 </div>

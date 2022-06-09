@@ -99,7 +99,7 @@ $payments = (new PaymentTable())->getAll();
       <input type="date" name="birthdate" id="birthdate" value="2000-01-01">
       <!-- submit -->
       <input type="submit" name="signup-submit" value="Sign up">
-      <p style="font-size: 12px;"><i>* Required fields</i></p>
+      <p><i>* Required fields</i></p>
     </form>
   </div>
 
