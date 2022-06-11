@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jun 09, 2022 at 10:24 AM
+-- Generation Time: Jun 11, 2022 at 11:48 AM
 -- Server version: 10.3.24-MariaDB-cll-lve
 -- PHP Version: 5.5.38
 
@@ -374,6 +374,7 @@ CREATE TABLE `movie` (
 INSERT INTO `movie` (`movie_id`, `title`, `duration`, `description`, `publication_year`, `cover_image`, `filename`, `previous_part`, `price`, `URL`) VALUES
 (1, 'Jurassic Park', 127, 'A pragmatic paleontologist touring an almost complete theme park on an island in Central America is tasked with protecting a couple of kids after a power failure causes the park\'s cloned dinosaurs to run loose.', 1993, 'jurassicpark.jpg', 'JurassicPark.mp4', NULL, '4.95', NULL),
 (2, 'The Joker', 122, 'A mentally troubled stand-up comedian embarks on a downward spiral that leads to the creation of an iconic villain.', 2019, 'joker.jpg', 'joker.mp4', NULL, '7.99', NULL),
+(3, 'Shrek', 90, 'A mean lord exiles fairytale creatures to the swamp of a grumpy ogre, who must go on a quest and rescue a princess for the lord in order to get his land back.', 2001, 'shrek.jpg', 'shrek.mp4', NULL, '420.00', NULL),
 (332548, 'Tied Up', 106, 'Description of Tied Up', 2005, 'peppapig.jpg', NULL, NULL, '2.50', NULL),
 (332925, 'Tigre e la neve, La', 106, 'Description of Tigre e la neve, La', 2005, 'bandersnatch.jpg', NULL, NULL, '2.50', NULL),
 (333238, 'Time for Mrai, A', 106, 'Description of Time for Mrai, A', 2005, 'batman.jpg', NULL, NULL, '2.50', NULL),
@@ -2839,6 +2840,8 @@ INSERT INTO `movie_genre` (`movie_id`, `genre_name`) VALUES
 (1, 'Sci-Fi'),
 (2, 'Crime'),
 (2, 'Drama'),
+(3, 'Horror'),
+(3, 'Short'),
 (332548, 'Drama'),
 (332925, 'Comedy'),
 (333238, 'Documentary'),
