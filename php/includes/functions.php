@@ -1,10 +1,18 @@
 <?php
+$conn = null;
+
 /**
  * Return the database connection or exits the script on failure.
  * @return PDO
  */
 function db(): PDO
 {
+  global $conn;
+
+  if (isset($conn)) { // Do not create new connection if it already exists.
+    return $conn;
+  }
+
   try {
     $conn = new PDO('mysql:host=' . DB_SERVERNAME . ';charset=utf8mb4;dbname=' . DB_TABLE_NAME, DB_USERNAME, DB_PASSWORD);
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
