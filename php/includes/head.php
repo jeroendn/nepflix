@@ -1,3 +1,10 @@
+<?php
+/**
+ * @var string $page
+ */
+?>
+
+<title>NEPFLIX- <?= ucwords($page) ?? '404' ?></title>
 <link rel="shortcut icon" href="/img/nepflix-icon.png" type="image/x-icon"/>
 <link rel="stylesheet" type="text/css" href="/fonts/fontawesome/css/all.css">
 <link rel="stylesheet" type="text/css" href="/css/var.css">
