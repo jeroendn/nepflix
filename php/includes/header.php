@@ -8,7 +8,7 @@ use Nepflix\Table\GenreTable;
   <nav class="navbar container">
 
     <div class="navbar-left">
-      <a href="/p/browse/" class="navbar-logo"><img src="/img/nepflix-logo.png" width="110px" alt="Nepflix logo"></a>
+      <a href="/p/browse/" class="navbar-logo hide-mobile"><img src="/img/nepflix-logo.png" width="110px" alt="Nepflix logo"></a>
       <button id="navbar-toggle" style="display:none;">
         <span class="navbar-toggle-icon"></span>
       </button>
@@ -36,7 +36,7 @@ use Nepflix\Table\GenreTable;
       </div>
       <ul class="navbar-nav">
         <?php if (loggedIn()): ?>
-          <li class="nav-item">
+          <li class="nav-item hide-mobile">
             <p>Welcome <?= $_SESSION['customer']['user_name'] ?></p>
           </li>
           <li class="nav-item">

@@ -110,6 +110,7 @@ nav.navbar {
 ul.navbar-nav {
   list-style: none;
   display: flex;
+  align-items: center;
 }
 
 li.nav-item a {
@@ -127,18 +128,45 @@ li.nav-item:not(:last-child) p {
   margin-bottom: 0;
 }
 
-@media only screen and (max-width: 768px) {
-  .navbar-logo {
-    /*display: none;*/
-  }
-}
-
 #nav-search {
   margin-bottom: 0;
 }
 
 .btn-logout:hover {
   color: red;
+}
+
+@media only screen and (min-width: 426px) and (max-width: 1000px) {
+  .navbar-right {
+    justify-content: space-between;
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .navbar-right .nav-item p, .navbar-right .nav-item a {
+    font-size: 12px;
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  nav.navbar {
+    padding-bottom: 40px;
+  }
+
+  ul.navbar-nav{
+    padding-left: 0;
+  }
+
+  #nav-search {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+  }
+
+  .hide-mobile {
+    display: none;
+  }
 }
 
 footer {

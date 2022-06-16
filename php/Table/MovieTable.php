@@ -52,11 +52,11 @@ final class MovieTable extends Table
   public function getBySearch(string $searchWord, ?string $genreName = null): array
   {
     if ($genreName === null) {
-      $sql = 'SELECT * FROM movie INNER JOIN movie_genre ON movie.movie_id=movie_genre.movie_id WHERE movie.title LIKE "%":search_word"%" ORDER BY movie.title';
+      $sql = 'SELECT DISTINCT movie.* FROM movie INNER JOIN movie_genre ON movie.movie_id=movie_genre.movie_id WHERE movie.title LIKE "%":search_word"%" ORDER BY movie.title';
       $stmt = $this->db->prepare($sql);
     }
     else {
-      $sql = 'SELECT * FROM movie INNER JOIN movie_genre ON movie.movie_id=movie_genre.movie_id WHERE movie.title LIKE "%":search_word"%" AND movie_genre.genre_name=:genre_name ORDER BY movie.title';
+      $sql = 'SELECT movie.* FROM movie INNER JOIN movie_genre ON movie.movie_id=movie_genre.movie_id WHERE movie.title LIKE "%":search_word"%" AND movie_genre.genre_name=:genre_name ORDER BY movie.title';
       $stmt = $this->db->prepare($sql);
       $stmt->bindParam(':genre_name', $genreName, PDO::PARAM_STR);
     }
