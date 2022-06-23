@@ -82,7 +82,7 @@ function getMovieTile(array $movie): string
               <h3>$title</h3>
               <p>$description</p>
               <div class="movie-card-bottom">
-                <p><span>Year: $year</span>&nbsp-&nbsp<span>Min: $duration</span></p>
+                <p><span>Year: $year</span>&nbsp;-&nbsp;<span>Min: $duration</span></p>
               </div>
             </div>
           </a>

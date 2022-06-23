@@ -107,6 +107,10 @@ nav.navbar {
   align-items: center;
 }
 
+.navbar-logo img {
+  width: 100px;
+}
+
 ul.navbar-nav {
   list-style: none;
   display: flex;

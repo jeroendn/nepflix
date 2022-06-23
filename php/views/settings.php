@@ -5,7 +5,7 @@
 
       <!-- current username -->
       <label>Current username</label>
-      <input type="text" value="<?= $_SESSION['customer']['user_name'] ?? '' ?>" disabled>
+      <input type="text" value="<?= $_SESSION['customer']['user_name'] ?? '' ?>" disabled readonly>
 
       <!-- new username -->
       <label for="username">New username</label>
@@ -13,7 +13,7 @@
 
       <!-- current mail -->
       <label>Current Mail</label>
-      <input type="email" value="<?= $_SESSION['customer']['customer_mail_address'] ?? '' ?>" disabled>
+      <input type="email" value="<?= $_SESSION['customer']['customer_mail_address'] ?? '' ?>" disabled readonly>
 
       <!-- new mail -->
       <label for="mail">New Mail</label>

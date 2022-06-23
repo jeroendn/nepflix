@@ -8,7 +8,7 @@ use Nepflix\Table\GenreTable;
   <nav class="navbar container">
 
     <div class="navbar-left">
-      <a href="/p/browse/" class="navbar-logo hide-mobile"><img src="/img/nepflix-logo.png" width="110px" alt="Nepflix logo"></a>
+      <a href="/p/browse/" class="navbar-logo hide-mobile"><img src="/img/nepflix-logo.png" alt="Nepflix logo"></a>
       <button id="navbar-toggle" style="display:none;">
         <span class="navbar-toggle-icon"></span>
       </button>

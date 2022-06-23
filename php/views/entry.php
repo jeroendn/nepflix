@@ -25,11 +25,11 @@ $payments = (new PaymentTable())->getAll();
     <p class="bold">Login to NEPFLIX</p>
     <form action="/php/post/login.php" method="post">
       <!-- mail -->
-      <label for="mail">Email</label>
-      <input type="email" name="mail" id="mail" placeholder="example@mail.com" required>
+      <label for="mail-login">Email</label>
+      <input type="email" name="mail" id="mail-login" placeholder="example@mail.com" required>
       <!-- password -->
-      <label for="password">Password</label>
-      <input type="password" name="password" id="password" placeholder="Password" required>
+      <label for="password-login">Password</label>
+      <input type="password" name="password" id="password-login" placeholder="Password" required>
       <!-- submit -->
       <input type="submit" name="login-submit" value="Login">
     </form>
