@@ -3,6 +3,7 @@
   flex-flow: row wrap;
   width: 100%;
   margin-bottom: 25px;
+  overflow-y: hidden !important;
 }
 
 .genre-row.scrollable {
@@ -44,6 +45,20 @@ h2 a:hover i {
   transition: box-shadow 200ms ease;
   scroll-snap-align: center;
   cursor: pointer;
+  animation-name: movie-card;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+}
+
+@keyframes movie-card {
+  0% {
+    top: 50px;
+    opacity: 0;
+  }
+  100% {
+    top: 0;
+    opacity: 1;
+  }
 }
 
 @media only screen and (max-width: 1200px) {
