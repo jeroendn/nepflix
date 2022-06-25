@@ -12,7 +12,7 @@ final class ContractTable extends Table
    */
   public function get(string $contractType): array
   {
-    $sql = 'SELECT * FROM contract WHERE contract_type=:contract_type';
+    $sql = 'SELECT contract_type, price_per_month FROM contract WHERE contract_type=:contract_type';
     $stmt = $this->db->prepare($sql);
     $stmt->bindParam(':contract_type', $contractType, PDO::PARAM_STR);
     $stmt->execute();
@@ -24,7 +24,7 @@ final class ContractTable extends Table
    */
   public function getAll(): array
   {
-    $sql = 'SELECT * FROM contract ORDER BY contract_type';
+    $sql = 'SELECT contract_type, price_per_month FROM contract ORDER BY contract_type';
     $stmt = $this->db->prepare($sql);
     $stmt->execute();
     return $stmt->fetchAll(PDO::FETCH_ASSOC) ?: [];

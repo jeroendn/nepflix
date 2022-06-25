@@ -12,7 +12,7 @@ final class MovieTable extends Table
    */
   public function get(int $movieId): array
   {
-    $sql = 'SELECT * FROM movie WHERE movie_id=:movie_id';
+    $sql = 'SELECT movie_id, title, duration, description, publication_year, cover_image, filename FROM movie WHERE movie_id=:movie_id';
     $stmt = $this->db->prepare($sql);
     $stmt->bindParam(':movie_id', $movieId, PDO::PARAM_INT);
     $stmt->execute();
@@ -24,7 +24,7 @@ final class MovieTable extends Table
    */
   public function getAll(): array
   {
-    $sql = 'SELECT * FROM movie ORDER BY title';
+    $sql = 'SELECT movie_id, title, duration, description, publication_year, cover_image, filename FROM movie ORDER BY title';
     $stmt = $this->db->prepare($sql);
     $stmt->execute();
     return $stmt->fetchAll(PDO::FETCH_ASSOC) ?: [];
@@ -37,7 +37,7 @@ final class MovieTable extends Table
    */
   public function getByGenre(string $genreName, ?int $limit = null): array
   {
-    $sql = 'SELECT * FROM movie INNER JOIN movie_genre ON movie.movie_id=movie_genre.movie_id WHERE movie_genre.genre_name=:genre_name ORDER BY RAND()' . ($limit ? " LIMIT $limit" : '');
+    $sql = 'SELECT movie.movie_id, movie.title, movie.duration, movie.description, movie.publication_year, movie.cover_image, movie.filename FROM movie INNER JOIN movie_genre ON movie.movie_id=movie_genre.movie_id WHERE movie_genre.genre_name=:genre_name ORDER BY RAND()' . ($limit ? " LIMIT $limit" : '');
     $stmt = $this->db->prepare($sql);
     $stmt->bindParam(':genre_name', $genreName, PDO::PARAM_STR);
     $stmt->execute();
@@ -52,11 +52,11 @@ final class MovieTable extends Table
   public function getBySearch(string $searchWord, ?string $genreName = null): array
   {
     if ($genreName === null) {
-      $sql = 'SELECT DISTINCT movie.* FROM movie INNER JOIN movie_genre ON movie.movie_id=movie_genre.movie_id WHERE movie.title LIKE "%":search_word"%" ORDER BY movie.title';
+      $sql = 'SELECT DISTINCT movie.movie_id, movie.title, movie.duration, movie.description, movie.publication_year, movie.cover_image, movie.filename FROM movie INNER JOIN movie_genre ON movie.movie_id=movie_genre.movie_id WHERE movie.title LIKE "%":search_word"%" ORDER BY movie.title';
       $stmt = $this->db->prepare($sql);
     }
     else {
-      $sql = 'SELECT movie.* FROM movie INNER JOIN movie_genre ON movie.movie_id=movie_genre.movie_id WHERE movie.title LIKE "%":search_word"%" AND movie_genre.genre_name=:genre_name ORDER BY movie.title';
+      $sql = 'SELECT movie.movie_id, movie.title, movie.duration, movie.description, movie.publication_year, movie.cover_image, movie.filename FROM movie INNER JOIN movie_genre ON movie.movie_id=movie_genre.movie_id WHERE movie.title LIKE "%":search_word"%" AND movie_genre.genre_name=:genre_name ORDER BY movie.title';
       $stmt = $this->db->prepare($sql);
       $stmt->bindParam(':genre_name', $genreName, PDO::PARAM_STR);
     }

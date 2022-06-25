@@ -11,7 +11,7 @@ final class CountryTable extends Table
    */
   public function getAll(): array
   {
-    $sql = 'SELECT * FROM country ORDER BY country_name';
+    $sql = 'SELECT country_name FROM country ORDER BY country_name';
     $stmt = $this->db->prepare($sql);
     $stmt->execute();
     return $stmt->fetchAll(PDO::FETCH_ASSOC) ?: [];
