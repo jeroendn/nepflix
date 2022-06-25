@@ -4,7 +4,7 @@ use Nepflix\Table\MovieTable;
 
 ?>
 
-<div class="container">
+<section class="container">
   <?php $genres = (new GenreTable())->getAll(); ?>
 
   <?php foreach ($genres as $genre): ?>
@@ -20,4 +20,4 @@ use Nepflix\Table\MovieTable;
 
     <?php endif; ?>
   <?php endforeach; ?>
-</div>
+</section>

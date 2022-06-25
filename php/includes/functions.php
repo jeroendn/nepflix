@@ -76,16 +76,16 @@ function getMovieTile(array $movie): string
   $duration = $movie['duration'];
 
   return <<<HTML
-        <div class="movie-card" style="background-image: url(/img/thumb/$img);">
+        <article class="movie-card" style="background-image: url(/img/thumb/$img);">
           <a href="/p/title/$id">
             <div class="movie-card-overlay">
-              <h3>$title</h3>
+              <h1>$title</h1>
               <p>$description</p>
               <div class="movie-card-bottom">
                 <p><span>Year: $year</span>&nbsp;-&nbsp;<span>Min: $duration</span></p>
               </div>
             </div>
           </a>
-        </div>
+        </article>
   HTML;
 }

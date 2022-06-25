@@ -18,7 +18,7 @@ $casts = $movie ? (new MovieCastTable())->getForMovie($movie['movie_id']) : null
 <div class="container-full title-cover" style="background-image: linear-gradient(180deg, transparent 30%, var(--color-bg) 95%), url(/img/thumb/<?= $movie['cover_image'] ?? 'no-video.jpg' ?>)">
 </div>
 
-<div class="container">
+<section class="container">
   <?php if (!empty($movie)): ?>
     <h1><?= $movie['title'] ?></h1>
     <a href="/p/watch/<?= $movie['movie_id'] ?>" class="play-btn"><i class="fas fa-circle-play"></i></a>
@@ -68,4 +68,4 @@ $casts = $movie ? (new MovieCastTable())->getForMovie($movie['movie_id']) : null
   <?php else: ?>
     <h1>Oops! This title doesn't exist.</h1>
   <?php endif; ?>
-</div>
+</section>

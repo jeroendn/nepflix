@@ -1,4 +1,4 @@
-<div class="container">
+<section class="container">
   <div class="card">
     <p class="bold">Change your account details</p>
     <form action="/php/post/settings.php" method="post">
@@ -36,4 +36,4 @@
       <input type="submit" name="settings-submit" value="Save changes">
     </form>
   </div>
-</div>
+</section>

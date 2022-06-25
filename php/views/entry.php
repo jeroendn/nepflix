@@ -14,11 +14,11 @@ $contracts = (new ContractTable())->getAll();
 $payments = (new PaymentTable())->getAll();
 ?>
 
-<div id="nepflix-logo" class="container">
+<section id="nepflix-logo" class="container">
   <img class="img-fluid" src="/img/nepflix-logo.png" alt="Nepflix logo">
-</div>
+</section>
 
-<div class="container">
+<section class="container">
 
   <!-- login -->
   <div class="card">
@@ -103,4 +103,4 @@ $payments = (new PaymentTable())->getAll();
     </form>
   </div>
 
-</div>
+</section>

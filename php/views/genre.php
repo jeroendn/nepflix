@@ -12,7 +12,7 @@ $genre = $param ? (new GenreTable())->get($param) : null;
 
 <link rel="stylesheet" type="text/css" href="/css/browse.css">
 
-<div class="container">
+<section class="container">
   <?php if (!empty($genre)): ?>
 
     <h1><?= $genre['genre_name'] ?></h1>
@@ -33,4 +33,4 @@ $genre = $param ? (new GenreTable())->get($param) : null;
   <?php else: ?>
     <h1>Oops! This genre doesn't exist.</h1>
   <?php endif; ?>
-</div>
+</section>

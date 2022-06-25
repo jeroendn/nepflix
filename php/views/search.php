@@ -19,7 +19,7 @@ $movies = (new MovieTable)->getBySearch($searchWord, $searchGenre);
 
 <link rel="stylesheet" type="text/css" href="/css/browse.css">
 
-<div class="container">
+<section class="container">
 
   <h1>Results for "<?= $searchWord ?>" <?= ($searchGenre ? ' in ' . $searchGenre : '') ?></h1>
 
@@ -35,4 +35,4 @@ $movies = (new MovieTable)->getBySearch($searchWord, $searchGenre);
     <p class="text-center">Your search didn't get any results.</p>
   <?php endif; ?>
 
-</div>
+</section>

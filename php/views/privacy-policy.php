@@ -1,4 +1,4 @@
-<div class="container">
+<section class="container">
   <h1>Privacy Policy</h1>
   <p>Last updated: June 11, 2022</p>
   <p>This Privacy Policy describes Our policies and procedures on the collection, use and disclosure of Your information when You use the Service and tells You about Your privacy rights and how the law protects You.</p>
@@ -172,4 +172,4 @@
       <p>By phone number: 0612345678</p>
     </li>
   </ul>
-</div>
+</section>
