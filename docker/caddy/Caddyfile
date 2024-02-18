@@ -1,0 +1,19 @@
+(defaults_nepflix) {
+    reverse_proxy php_nepflix:80
+}
+
+nu.jeroendn.nl {
+    import defaults_nepflix
+
+    tls {
+        on_demand
+    }
+}
+
+nepflix.local {
+    import defaults_nepflix
+
+    tls internal {
+        on_demand
+    }
+}
