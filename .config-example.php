@@ -9,5 +9,8 @@ const UNAUTHENTICATED_ALLOWED_URL = [
   'entry',
   'login.php',
   'signup.php',
-  'browse'
+  'browse',
+  'title',
+  'about',
+  'privacy-policy'
 ];
