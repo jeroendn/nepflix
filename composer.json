@@ -11,5 +11,8 @@
     "psr-4": {
       "Nepflix\\Table\\": "php/Table"
     }
+  },
+  "config": {
+    "sort-packages": true
   }
 }

@@ -5,6 +5,8 @@ services:
     image: php_nepflix:apache
     container_name: php_nepflix
     restart: unless-stopped
+    environment:
+      TZ: Europe/Amsterdam
     volumes:
       - ./:/var/www/html
     networks:
